@@ -12,6 +12,27 @@ function renderBooks(books) {
   });
 }
 
+// (function)
+
+function fetchBooks() {
+  // To pass the tests, don't forget to return your fetch!
+  return fetch('https://anapioficeandfire.com/api/books')
+  .then(response => response.json())
+  .then(data => renderBooks(data));
+
+}
+fetchBooks()
+
+function initialize(){
+  fetchBooks()
+}
+initialize()
+
+
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks();
 });
+
+
+
+
